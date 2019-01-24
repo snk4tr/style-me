@@ -1,0 +1,16 @@
+routes:
+  style: style
+  test: test
+
+style:
+  img_side: 256
+  weights_name:
+
+general:
+  weights_root_folder: resources
+  output_folder: out
+
+test:
+  root_folder: tests
+  resources_folder: resources
+  style_example_image:
