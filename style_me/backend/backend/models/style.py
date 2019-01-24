@@ -5,8 +5,8 @@ import pytz
 
 from datetime import datetime
 
-from style_me_backend.architectures.style import TransformerNet
-from style_me_backend.util.common import convert_image_to_torch_tensor, save_torch_image, convert_torch_tensor_to_image
+from backend.architectures.style import TransformerNet
+from backend.util.common import convert_image_to_torch_tensor, save_torch_image, convert_torch_tensor_to_image
 
 
 class StyleModel:

@@ -2,7 +2,7 @@ import subprocess
 
 from argparse import ArgumentParser
 
-from style_me_backend.main import main as app_main
+from backend.main import main as app_main
 
 
 def run_tests():

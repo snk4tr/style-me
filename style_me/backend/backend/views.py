@@ -2,7 +2,7 @@ import aiohttp
 
 from aiohttp import web
 
-from style_me_backend.util.codecs import prepare_image_from_request, prepare_image_for_sending
+from backend.util.codecs import prepare_image_from_request, prepare_image_for_sending
 
 
 async def style(request: aiohttp.web_request.Request):

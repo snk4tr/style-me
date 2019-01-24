@@ -1,4 +1,4 @@
-from style_me_backend.models.style import StyleModel
+from backend.models.style import StyleModel
 
 
 def init_all_models(config: dict) -> dict:

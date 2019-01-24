@@ -1,6 +1,6 @@
 import unittest
 
-from style_me_backend.settings import config, template
+from backend.settings import config, template
 
 
 class ConfigCorrectTest(unittest.TestCase):

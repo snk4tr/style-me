@@ -4,11 +4,11 @@ import json
 
 from aiohttp.test_utils import AioHTTPTestCase, unittest_run_loop
 
-from main import setup_app
-from style_me_backend.settings import config
-from style_me_backend.util.common import load_image
-from style_me_backend.util.codecs import prepare_image_for_sending
-from util.common import get_variable_size
+from backend.main import setup_app
+from backend.settings import config
+from backend.util.common import load_image
+from backend.util.codecs import prepare_image_for_sending
+from backend.util.common import get_variable_size
 
 
 class ServerFunctionalityTest(AioHTTPTestCase):

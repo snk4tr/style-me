@@ -1,8 +1,8 @@
 from aiohttp import web
 
-from style_me_backend.settings import config
-from style_me_backend.routes import setup_routes
-from style_me_backend.util.initializers import init_all_models
+from backend.settings import config
+from backend.routes import setup_routes
+from backend.util.initializers import init_all_models
 
 
 def setup_app():

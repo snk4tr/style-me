@@ -1,4 +1,4 @@
-from style_me_backend.views import style, test
+from backend.views import style, test
 
 
 def setup_routes(app):
