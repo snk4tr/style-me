@@ -3,8 +3,8 @@ platform :ios, '12.1'
 target 'Frontend' do
   use_frameworks!
 
-  pod 'Alamofire', '~> 5.0.0.beta.1'
+  pod 'Alamofire', '~> 4.8'
   pod 'SwiftLint', '~> 0.27'
-  pod 'SwiftyJSON', '~> 4.0'
+  pod 'AlamofireImage', '~> 3.5'
 
 end
