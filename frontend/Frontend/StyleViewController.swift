@@ -22,7 +22,8 @@ class StyleViewController: UIViewController {
     }
     
     @IBAction func onStylizeTap(_ sender: UIButton) {
-        let imgData = stylizedImage.image?.jpegData(compressionQuality: 0.8)
+        let correctlyOrientedImage = stylizedImage.image?.correctlyOrientedImage()
+        let imgData = correctlyOrientedImage!.jpegData(compressionQuality: 0.8)
         
         Alamofire.upload(imgData!, to:"http://192.168.0.106:8080/style")
             .responseImage { response in

@@ -1,8 +1,6 @@
 import numpy as np
 import cv2
 
-from scipy.ndimage import rotate
-
 from backend.util.validators import image_is_valid
 
 
@@ -12,7 +10,6 @@ async def prepare_image_from_request(image_bytes: bytes):
         raise ValueError('Image buffer is too short or contains invalid data')
 
     if await image_is_valid(image):
-        image = rotate(image, -90, reshape=True)
         return image
 
     raise ValueError('Image is broken')

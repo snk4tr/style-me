@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		871AC44339C8A973AA7DB1FB /* Pods_Frontend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C280229047185B9111ACD0 /* Pods_Frontend.framework */; };
+		9B9CA4A02207308E00249FD7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9CA49F2207308E00249FD7 /* UIImage.swift */; };
 		9BC66FB821D9EE3E008E7884 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC66FB721D9EE3E008E7884 /* AppDelegate.swift */; };
 		9BC66FBA21D9EE3E008E7884 /* NewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC66FB921D9EE3E008E7884 /* NewPhotoViewController.swift */; };
 		9BC66FBD21D9EE3E008E7884 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC66FBB21D9EE3E008E7884 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		32901DE9E0DFB8143683EA33 /* Pods-Frontend.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frontend.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Frontend/Pods-Frontend.debug.xcconfig"; sourceTree = "<group>"; };
 		3579F1073DDFDC777A00CBE9 /* Pods-Frontend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frontend.release.xcconfig"; path = "Pods/Target Support Files/Pods-Frontend/Pods-Frontend.release.xcconfig"; sourceTree = "<group>"; };
 		63C280229047185B9111ACD0 /* Pods_Frontend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frontend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B9CA49F2207308E00249FD7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		9BC66FB421D9EE3E008E7884 /* Frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frontend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC66FB721D9EE3E008E7884 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BC66FB921D9EE3E008E7884 /* NewPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPhotoViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9B9CA49E2207306900249FD7 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				9B9CA49F2207308E00249FD7 /* UIImage.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
 		9BC66FAB21D9EE3E008E7884 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +92,7 @@
 		9BC66FB621D9EE3E008E7884 /* Frontend */ = {
 			isa = PBXGroup;
 			children = (
+				9B9CA49E2207306900249FD7 /* Extentions */,
 				9BEBA00F21DA1FE000ED476D /* Util */,
 				9BC66FB721D9EE3E008E7884 /* AppDelegate.swift */,
 				9BC66FB921D9EE3E008E7884 /* NewPhotoViewController.swift */,
@@ -225,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BCF2A0D21DB8E2A00710EF5 /* StyleViewController.swift in Sources */,
+				9B9CA4A02207308E00249FD7 /* UIImage.swift in Sources */,
 				9BC66FBA21D9EE3E008E7884 /* NewPhotoViewController.swift in Sources */,
 				9BEBA01121DA1FEB00ED476D /* Common.swift in Sources */,
 				9BC66FB821D9EE3E008E7884 /* AppDelegate.swift in Sources */,
