@@ -24,9 +24,12 @@ class StyleViewController: UIViewController {
     @IBAction func onStylizeTap(_ sender: UIButton) {
         let imgData = stylizedImage.image?.jpegData(compressionQuality: 0.8)
         
+        // TODO: add handling of wrong routes
+        // TODO: add timeout request canseling
         Alamofire.upload(imgData!, to:"http://192.168.0.106:8080/style")
             .responseImage { response in
                 guard let image = response.result.value else {
+                    print("ERROR")
                     // Handle error
                     return
                 }

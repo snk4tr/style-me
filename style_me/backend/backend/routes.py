@@ -8,3 +8,4 @@ def setup_routes(app):
     # POST routes:
     app.router.add_post('/style', style)
 
+

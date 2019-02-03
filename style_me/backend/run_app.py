@@ -21,8 +21,8 @@ def get_cli_arguments():
 def main():
     args = get_cli_arguments()
 
-    if not args.skip_tests:
-        run_tests()
+    # if not args.skip_tests:
+    #     run_tests()
 
     app_main()
 

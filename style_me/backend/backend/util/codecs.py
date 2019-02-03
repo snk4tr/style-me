@@ -1,33 +1,20 @@
-import json
 import numpy as np
 import cv2
 
-
-class NumpyEncoder(json.JSONEncoder):
-    def default(self, obj):
-        if isinstance(obj, np.ndarray):
-            return obj.tolist()
-
-        return json.JSONEncoder.default(self, obj)
+from backend.util.validators import image_is_valid
 
 
-def prepare_image_from_request(json_dump):
-    if type(json_dump) == dict:
-        vectorized_image = np.asarray(json_dump["image"])
-        img_side = int(np.sqrt(len(vectorized_image) / 3))
-        needed_img_length = img_side ** 2 * 3
-        vectorized_image = vectorized_image[:needed_img_length]
-        image = vectorized_image.reshape(img_side, img_side, 3)
-        image = image.astype(np.uint8)
+async def prepare_image_from_request(image_bytes):
+    print('type(image_bytes)', type(image_bytes))
+    image = cv2.imdecode(np.frombuffer(image_bytes, np.uint8), -1)
+    if await image_is_valid(image):
         return image
 
-    json_dump = json.loads(json_dump)
-    restored_image = np.asarray(json_dump["image"])
-    return restored_image
+    raise ValueError('Image is broken')
 
 
-def prepare_image_for_sending(image: np.ndarray, description: str) -> dict:
-    json_dump = json.dumps({'image': image,
-                            'description': description}, cls=NumpyEncoder)
+async def prepare_image_for_sending(image: np.ndarray) -> dict:
+    _, encoded_image = cv2.imencode('.jpeg', image)
+    image_bytes = encoded_image.tobytes()
+    return image_bytes
 
-    return json_dump
