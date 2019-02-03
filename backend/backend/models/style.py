@@ -3,7 +3,7 @@ import os
 import re
 import pytz
 
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from backend.architectures.style import TransformerNet
 from backend.util.common import convert_image_to_torch_tensor, save_torch_image, convert_torch_tensor_to_image
@@ -68,6 +68,10 @@ class StyleModel:
         os.makedirs(out_folder, exist_ok=True)
 
         today = datetime.now(pytz.utc)
+
+        # Add 3 hours since I live in UTC+3
+        today += timedelta(hours=3)
+
         out_fname = f'{self.name}_{today.day}_{today.month}_{today.year}_{today.hour}_{today.minute}_{today.second}.jpg'
         out_fpath = os.path.join(out_folder, out_fname)
         return out_fpath

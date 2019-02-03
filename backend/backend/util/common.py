@@ -75,3 +75,11 @@ def get_variable_size(obj, seen=None):
         size += sum([get_variable_size(i, seen) for i in obj])
 
     return size
+
+
+def resize_to_standard(image: np.ndarray, config: dict):
+    standard_side = config['style']['img_side']
+    if any([side != standard_side for side in image.shape[:2]]):
+        return cv2.resize(image, (standard_side, standard_side))
+
+    return image

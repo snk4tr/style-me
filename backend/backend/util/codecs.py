@@ -2,6 +2,7 @@ import numpy as np
 import cv2
 
 from backend.util.validators import image_is_valid
+from backend.util.common import resize_to_standard
 
 
 async def prepare_image_from_request(image_bytes: bytes):
@@ -9,10 +10,10 @@ async def prepare_image_from_request(image_bytes: bytes):
     if image.size == 0:
         raise ValueError('Image buffer is too short or contains invalid data')
 
-    if await image_is_valid(image):
-        return image
+    if not await image_is_valid(image):
+        raise ValueError('Image is broken')
 
-    raise ValueError('Image is broken')
+    return image
 
 
 def decode_bytes_to_image(image_bytes: bytes) -> np.ndarray:
@@ -25,7 +26,10 @@ async def prepare_image_for_sending(image: np.ndarray) -> bytes:
 
 
 def encode_image_to_bytes(image: np.ndarray) -> bytes:
-    success, encoded_image = cv2.imencode('.jpeg', image)
+    # For some weird reason IOS encodes images in RGB, but decodes in BGR so to actually represent image
+    # on device exactly as it looks after stylization it has to be converted to BGR.
+    bgr_image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
+    success, encoded_image = cv2.imencode('.jpeg', bgr_image)
     if not success:
         raise ValueError('Image could not be encoded')
 
