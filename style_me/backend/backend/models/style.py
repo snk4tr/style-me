@@ -29,14 +29,14 @@ class StyleModel:
         stylized_image = self.predict(content_image)
         stylized_image = convert_torch_tensor_to_image(stylized_image)
 
-        save_path = self.__get_save_path()
+        save_path = self.__save_path()
         save_torch_image(data=stylized_image, filename=save_path)
         return stylized_image
 
     def __init_model(self):
         device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
-        weights_to_use_path = self.__get_weights_path()
+        weights_to_use_path = self.__weights_path()
         with torch.no_grad():
             style_model = TransformerNet()
             state_dict = torch.load(weights_to_use_path)
@@ -51,7 +51,7 @@ class StyleModel:
 
         return style_model
 
-    def __get_weights_path(self):
+    def __weights_path(self):
         root_folder = self.__config['general']['weights_root_folder']
         model_folder = self.name
         weights_name = self.__config['style']['weights_name']
@@ -63,7 +63,7 @@ class StyleModel:
 
         return weights_path
 
-    def __get_save_path(self):
+    def __save_path(self):
         out_folder = self.__config['general']['output_folder']
         os.makedirs(out_folder, exist_ok=True)
 

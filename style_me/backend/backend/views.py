@@ -12,6 +12,7 @@ async def style(request: aiohttp.web.web_request.Request):
 
     model = request.app['models']['style']
     styled_image = model.stylize_image(init_image)
+    print('styled_image.shape', styled_image.shape)
     data = await prepare_image_for_sending(styled_image)
     return web.Response(body=data, content_type='image/jpeg')
 
