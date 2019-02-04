@@ -6,7 +6,7 @@ from backend.main import main as app_main
 
 
 def run_tests():
-    subprocess.check_call(["python", "-m", "unittest", "discover", "-s", "tests"])
+    subprocess.check_call(["python", "-m", "pytest"])
 
 
 def get_cli_arguments():

@@ -12,3 +12,5 @@ torch==1.0.0
 torchvision==0.2.1
 opencv-python==4.0.0.21
 pytz==2018.9
+pytest==4.2.0
+pytest-asyncio==0.10.0
