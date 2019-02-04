@@ -83,3 +83,33 @@ def resize_to_standard(image: np.ndarray, config: dict):
         return cv2.resize(image, (standard_side, standard_side))
 
     return image
+
+
+def center_crop(init_image, stylized_image):
+    """
+    Crops central part of stylized image in case if paddings used in Style model led
+    to the fact that the shape appeared to be slightly greater than the original.
+
+    Args:
+        init_image(np.ndarray): initial image.
+        stylized_image(np.ndarray): stylized image.
+
+    Returns(np.ndarray):
+        cropped styled image.
+    """
+    if init_image.shape == stylized_image.shape:
+        return stylized_image
+
+    height, width = stylized_image.shape[0], stylized_image.shape[1]
+    new_height, new_width = init_image.shape[0], init_image.shape[1]
+
+    left = (width - new_width) // 2
+    top = (height - new_height) // 2
+    right = (width + new_width) // 2
+    bottom = (height + new_height) // 2
+
+    new_stylized_image = np.zeros(init_image.shape, dtype=np.uint8)
+    for i in range(stylized_image.shape[-1]):
+        new_stylized_image[..., i] = stylized_image[top: bottom, left: right, i]
+
+    return new_stylized_image

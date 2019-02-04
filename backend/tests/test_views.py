@@ -43,7 +43,6 @@ class StyleViewTest(AioHTTPTestCase):
         response = await resp.read()
         assert type(response) is bytes, f"This response must be of type bytes, got [{type(response)}]"
 
-    @unittest.skip
     @unittest_run_loop
     async def test_image_not_corrupted_with_stylization(self):
         data_bytes = data_bytes_for_test(config)
@@ -57,6 +56,6 @@ class StyleViewTest(AioHTTPTestCase):
         assert init_image.dtype == stylized_image.dtype, f'Dtypes of init and stylized images have to be the same, ' \
             f'got: init - [{init_image.dtype}], stylized - [{stylized_image.dtype}]'
 
-        assert np.array_equal(np.array(init_image.shape), np.array(stylized_image.shape)), f'Init and stylized ' \
+        assert init_image.shape == stylized_image.shape, f'Init and stylized ' \
             f'images have to be the same shape, got: init - [{init_image.shape}], stylized - [{stylized_image.shape}]'
 
