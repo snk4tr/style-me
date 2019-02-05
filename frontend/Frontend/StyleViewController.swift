@@ -22,17 +22,21 @@ class StyleViewController: UIViewController {
     }
     
     @IBAction func onStylizeTap(_ sender: UIButton) {
+        // Make orientation of the image always to be "up".
         let correctlyOrientedImage = stylizedImage.image?.correctlyOrientedImage()
+        
+        // Transorm to jpeg representation with a slight compression.
         let imgData = correctlyOrientedImage!.jpegData(compressionQuality: 0.8)
         
+        // Upload init image, dowload stylized from backend
         Alamofire.upload(imgData!, to:"http://192.168.0.106:8080/style")
             .responseImage { response in
                 guard let image = response.result.value else {
-                    print("ERROR")
                     // Handle error
+                    print("ERROR")
                     return
                 }
-                // Do stuff with your image
+                // Set image as new UIImageView
                 DispatchQueue.main.async {
                     self.stylizedImage.image = image
                 }
@@ -41,5 +45,6 @@ class StyleViewController: UIViewController {
     }
     
     @IBAction func onSaveTap(_ sender: UIButton) {
+        // TODO: implement
     }
 }

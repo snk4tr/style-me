@@ -14,6 +14,17 @@ def save_torch_image(data: np.ndarray, filename: str):
 
 
 def convert_image_to_torch_tensor(content_image, device):
+    """
+    Convert object from numpy internal PyTorch representation (tensor).
+
+    Args:
+        content_image(np.ndarray): initial content image.
+        device(str): type of device used be model.
+            Options: 'cpu', 'cuda'.
+
+    Returns(torch.Tensor):
+        converted image object.
+    """
     device = torch.device(device)
     content_transform = transforms.Compose([
         transforms.ToTensor(),

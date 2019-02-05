@@ -17,12 +17,30 @@ class StyleModel:
         self.__model = self.__init_model()
 
     def predict(self, content_image):
+        """
+        Perform inference of style model.
+
+        Args:
+            content_image(torch.Tensor): content image to be stylized.
+
+        Returns(torch.Tensor):
+            stylized image.
+        """
         with torch.no_grad():
             output = self.__model(content_image).cpu()
 
         return output[0]
 
     def stylize_image(self, content_image):
+        """
+        Perform stylization of content image.
+
+        Args:
+            content_image(np.ndarray): content image to be stylized.
+
+        Returns(np.ndarray):
+            stylized image.
+        """
         device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
         content_image = convert_image_to_torch_tensor(content_image, device=device)
 
@@ -34,6 +52,12 @@ class StyleModel:
         return stylized_image
 
     def __init_model(self):
+        """
+        Initialize style model of given architecture.
+
+        Returns(torch.nn.Module):
+            ready for inference initialized style model.
+        """
         device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
         weights_to_use_path = self.__weights_path()
@@ -52,6 +76,12 @@ class StyleModel:
         return style_model
 
     def __weights_path(self):
+        """
+        Define path to the models weights.
+
+        Returns(str):
+            path to the models weights.
+        """
         root_folder = self.__config['general']['weights_root_folder']
         model_folder = self.name
         weights_name = self.__config['style']['weights_name']
@@ -64,6 +94,12 @@ class StyleModel:
         return weights_path
 
     def __save_path(self):
+        """
+        Define path where models output will be saved.
+
+        Returns(str):
+            path where models output will be saved.
+        """
         out_folder = self.__config['general']['output_folder']
         os.makedirs(out_folder, exist_ok=True)
 
