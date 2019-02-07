@@ -10,12 +10,13 @@ import UIKit
 import Alamofire
 import AVFoundation
 
-class NewPhotoViewController: UIViewController, AVCapturePhotoCaptureDelegate {
+class NewPhotoViewController: UIViewController, AVCapturePhotoCaptureDelegate, UINavigationControllerDelegate {
     
     var captureSession: AVCaptureSession!
     var stillImageOutput: AVCapturePhotoOutput!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
-    var capturedImage: UIImage!
+    var capturedImage: UIImage!                           // Used as a proxy to transfer photos between views
+    var imagePicker: UIImagePickerController!             // An object for loading images from photo library
     
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var captureButton: UIButton!
@@ -129,6 +130,7 @@ class NewPhotoViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             performSegue(withIdentifier: "stylePhoto", sender: self)
             return
         }
+        
         print("captureButton's background image has not been set!")
     }
     
@@ -138,6 +140,7 @@ class NewPhotoViewController: UIViewController, AVCapturePhotoCaptureDelegate {
         guard let imageData = photo.fileDataRepresentation()
             else { return }
         
+        // Both have to be updated: proxy image storage and buttons image view
         capturedImage = UIImage(data: imageData)
         captureButton.setImage(capturedImage, for: .normal)
     }
@@ -149,6 +152,40 @@ class NewPhotoViewController: UIViewController, AVCapturePhotoCaptureDelegate {
             }
         }
     }
+    
+    @IBAction func didLoadTapped(_ sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            
+            imagePicker =  UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = .savedPhotosAlbum;
+            imagePicker.allowsEditing = false
+            
+            self.present(imagePicker, animated: true, completion: nil)
+            return
+        }
+        
+        // .savedPhotosAlbum is unavaliable
+        print("Photo library for some reason is unavaliable")
+    }
 }
+
+
+// Provides image loading functionality
+extension NewPhotoViewController: UIImagePickerControllerDelegate{
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+        imagePicker.dismiss(animated: true, completion: nil)
+        guard let selectedImage = info[.originalImage] as? UIImage else {
+            print("Image not found!")
+            return
+        }
+        
+        // Both have to be updated: proxy image storage and buttons image view
+        capturedImage = selectedImage
+        captureButton.setImage(selectedImage, for: .normal)
+    }
+}
+
 
 

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hN-hd-Hqg">
-                                <rect key="frame" x="144" y="555" width="102" height="92"/>
+                                <rect key="frame" x="144" y="494" width="102" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.8898086878" green="0.8898086878" blue="0.8898086878" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Take Photo"/>
@@ -28,7 +28,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mQ-uG-yh7">
-                                <rect key="frame" x="254" y="555" width="105" height="92"/>
+                                <rect key="frame" x="254" y="527" width="105" height="92"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.8898086878" green="0.8898086878" blue="0.8898086878" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Switch Camera"/>
@@ -37,7 +37,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNB-AY-3DQ">
-                                <rect key="frame" x="16" y="524" width="112" height="123"/>
+                                <rect key="frame" x="16" y="512" width="112" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -52,6 +52,15 @@
                                     <constraint firstAttribute="width" secondItem="BDm-YW-fKa" secondAttribute="height" multiplier="343:422" id="lSt-yN-1gT"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxS-rb-sTo">
+                                <rect key="frame" x="144" y="585" width="102" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.8898086878" green="0.8898086878" blue="0.8898086878" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Load"/>
+                                <connections>
+                                    <action selector="didLoadTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hkg-fJ-Mso"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
