@@ -45,6 +45,24 @@ class StyleViewController: UIViewController {
     }
     
     @IBAction func onSaveTap(_ sender: UIButton) {
-        // TODO: implement
+        guard let selectedImage = self.stylizedImage.image else {
+            print("Image not found!")
+            return
+        }
+        UIImageWriteToSavedPhotosAlbum(selectedImage, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        if let error = error {
+            showAlertWith(title: "Save error", message: error.localizedDescription)
+            return
+        }
+        showAlertWith(title: "Saved!", message: "Your image has been saved to your photo library.")
+    }
+    
+    func showAlertWith(title: String, message: String){
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
     }
 }

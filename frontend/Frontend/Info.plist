@@ -38,6 +38,10 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>Gimme the access man! I&apos;m not kidding!</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>You can select photos to style it</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Please allow access to save photo in your photo</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
