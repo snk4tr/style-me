@@ -71,6 +71,15 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
+		9BA7432B2215F1800000C694 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9BC66FB921D9EE3E008E7884 /* NewPhotoViewController.swift */,
+				9BCF2A0C21DB8E2A00710EF5 /* StyleViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		9BC66FAB21D9EE3E008E7884 = {
 			isa = PBXGroup;
 			children = (
@@ -92,11 +101,10 @@
 		9BC66FB621D9EE3E008E7884 /* Frontend */ = {
 			isa = PBXGroup;
 			children = (
+				9BA7432B2215F1800000C694 /* Controllers */,
 				9B9CA49E2207306900249FD7 /* Extentions */,
 				9BEBA00F21DA1FE000ED476D /* Util */,
 				9BC66FB721D9EE3E008E7884 /* AppDelegate.swift */,
-				9BC66FB921D9EE3E008E7884 /* NewPhotoViewController.swift */,
-				9BCF2A0C21DB8E2A00710EF5 /* StyleViewController.swift */,
 				9BC66FBB21D9EE3E008E7884 /* Main.storyboard */,
 				9BC66FBE21D9EE40008E7884 /* Assets.xcassets */,
 				9BC66FC021D9EE40008E7884 /* LaunchScreen.storyboard */,
