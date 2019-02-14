@@ -1,6 +1,3 @@
-import numpy as np
-import unittest
-
 from aiohttp.test_utils import AioHTTPTestCase, unittest_run_loop
 
 from backend.main import setup_app
