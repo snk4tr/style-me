@@ -28,8 +28,15 @@ class StyleViewController: UIViewController {
         // Transorm to jpeg representation with a slight compression.
         let imgData = correctlyOrientedImage!.jpegData(compressionQuality: 0.8)
         
+        let requestPath = configureConnection(task: "style")
+        
+        let manager = Alamofire.SessionManager.default
+        let timeout = Double(Environment().configuration(PlistKey.TimeoutInterval)) ?? 20
+        print("\(timeout)")
+        manager.session.configuration.timeoutIntervalForRequest = timeout
+        
         // Upload init image, dowload stylized from backend
-        Alamofire.upload(imgData!, to:"http://192.168.0.106:8080/style")
+        manager.upload(imgData!, to: requestPath)
             .responseImage { response in
                 guard let image = response.result.value else {
                     // Handle error
@@ -42,6 +49,13 @@ class StyleViewController: UIViewController {
                 }
                 print("DONE")
         }
+    }
+    
+    func configureConnection(task: String) -> String {
+        let url = Environment().configuration(PlistKey.ServerURL)
+        let port = Environment().configuration(PlistKey.ServerPort)
+        let prot = Environment().configuration(PlistKey.ConnectionProtocol)
+        return "\(prot)://\(url):\(port)/\(task)"
     }
     
     @IBAction func onSaveTap(_ sender: UIButton) {
