@@ -1,13 +1,13 @@
 //
-//  Development.xcconfig
+//  DevelopmentTemplate.xcconfig
 //  Frontend
 //
-//  Created by Sergey Kastryulin on 2/14/19.
+//  Created by Sergey Kastryulin on 2/17/19.
 //  Copyright © 2019 snk4tr. All rights reserved.
 //
 
 // Server URL and other server-related configuration keys:
-server_url = 192.168.0.106
-server_port = 8080
-timeout_interval = 1
+server_url =
+server_port =
+timeout_interval = 20
 protocol = http
