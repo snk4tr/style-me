@@ -22,33 +22,58 @@ class StyleViewController: UIViewController {
     }
     
     @IBAction func onStylizeTap(_ sender: UIButton) {
-        // Make orientation of the image always to be "up".
-        let correctlyOrientedImage = stylizedImage.image?.correctlyOrientedImage()
-        
-        // Transorm to jpeg representation with a slight compression.
-        let imgData = correctlyOrientedImage!.jpegData(compressionQuality: 0.8)
+        guard let imgData = retrieveImgData() else {
+            debugPrint("Unsuccessful image loading")
+            return
+        }
         
         let requestPath = configureConnection(task: "style")
         
         let manager = Alamofire.SessionManager.default
         let timeout = Double(Environment().configuration(PlistKey.TimeoutInterval)) ?? 20
-        print("\(timeout)")
         manager.session.configuration.timeoutIntervalForRequest = timeout
         
         // Upload init image, dowload stylized from backend
-        manager.upload(imgData!, to: requestPath)
+        manager.upload(imgData, to: requestPath)
             .responseImage { response in
                 guard let image = response.result.value else {
                     // Handle error
-                    print("ERROR")
+                    self.showAlertWith(title: "Something went wrong", message: "Please check your connection settings and backend avaliability")
+                    debugPrint("ERROR")
                     return
                 }
                 // Set image as new UIImageView
                 DispatchQueue.main.async {
                     self.stylizedImage.image = image
                 }
-                print("DONE")
+                debugPrint("DONE")
         }
+    }
+    
+    func retrieveImgData() -> Data? {
+        /*
+         Performs all actions related to retrieving of image data e.g. retrieving correctly
+         oriented image from the UIImageView, checking whether it has a valid content and actual
+         transformation to a format used for image transfering.
+         */
+        guard let correctlyOrientedImage = stylizedImage.image?.correctlyOrientedImage() else {
+            showAlertWith(title: "Stylization error", message: "Please provide a photo with a person")
+            return nil
+        }
+        
+        if !correctlyOrientedImage.containsPerson() {
+            showAlertWith(title: "Stylization error", message: "Please provide a photo with a person")
+            print("HERE")
+            return nil
+        }
+        
+        // Transorm to jpeg representation with a slight compression.
+        guard let imgData = correctlyOrientedImage.jpegData(compressionQuality: 0.8) else {
+            showAlertWith(title: "Conversion error", message: "The image could not be converted to jpeg")
+            return nil
+        }
+        
+        return imgData
     }
     
     func configureConnection(task: String) -> String {

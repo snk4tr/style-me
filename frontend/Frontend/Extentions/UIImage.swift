@@ -21,4 +21,8 @@ extension UIImage {
         
         return normalizedImage ?? self;
     }
+    
+    func containsPerson() -> Bool {
+        return true
+    }
 }
