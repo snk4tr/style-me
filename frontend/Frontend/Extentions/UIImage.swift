@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 extension UIImage {
     func correctlyOrientedImage() -> UIImage {
         if self.imageOrientation == .up {
@@ -23,14 +24,13 @@ extension UIImage {
     }
     
     func containsPerson() -> Bool {
-        let inception :InceptionV3 = InceptionV3()
+        let model :IsHumanDenseNet121 = IsHumanDenseNet121()
         
-        let resizedImage = self.resizeTo(size: CGSize(width: 299, height: 299))
+        let resizedImage = self.resizeTo(size: CGSize(width: 224, height: 224))
         let buffer = resizedImage.toBuffer()
         
-        let prediction = try! inception.prediction(input: InceptionV3Input(image: buffer!))
+        let prediction = try! model.prediction(input: IsHumanDenseNet121Input(image: buffer!))
         
-        print("prediction.classLabel.lowercased(): \(prediction.classLabel.lowercased())")
         if prediction.classLabel.lowercased() == "person" {
             return true
         }
