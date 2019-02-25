@@ -18,7 +18,6 @@
 		9BC66FC221D9EE40008E7884 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC66FC021D9EE40008E7884 /* LaunchScreen.storyboard */; };
 		9BCF2A0D21DB8E2A00710EF5 /* StyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCF2A0C21DB8E2A00710EF5 /* StyleViewController.swift */; };
 		9BEBA01121DA1FEB00ED476D /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEBA01021DA1FEB00ED476D /* Common.swift */; };
-		9BF504262219EDDB0033B054 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9BF504252219EDDB0033B054 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +38,6 @@
 		9BC66FC321D9EE40008E7884 /* Development.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Development.plist; sourceTree = "<group>"; };
 		9BCF2A0C21DB8E2A00710EF5 /* StyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleViewController.swift; sourceTree = "<group>"; };
 		9BEBA01021DA1FEB00ED476D /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		9BF504252219EDDB0033B054 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		9BF504272219EE890033B054 /* DevelopmentTemplate.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DevelopmentTemplate.xcconfig; sourceTree = "<group>"; };
 		9BF5042B2219F4D80033B054 /* CoreML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreML.framework; path = System/Library/Frameworks/CoreML.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -124,7 +122,6 @@
 				9BC66FC321D9EE40008E7884 /* Development.plist */,
 				9BA7432C2215F2180000C694 /* Development.xcconfig */,
 				9BF504272219EE890033B054 /* DevelopmentTemplate.xcconfig */,
-				9BF504252219EDDB0033B054 /* .gitignore */,
 			);
 			path = Frontend;
 			sourceTree = "<group>";
@@ -206,7 +203,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BF504262219EDDB0033B054 /* .gitignore in Resources */,
 				9BC66FC221D9EE40008E7884 /* LaunchScreen.storyboard in Resources */,
 				9BC66FBF21D9EE40008E7884 /* Assets.xcassets in Resources */,
 				9BC66FBD21D9EE3E008E7884 /* Main.storyboard in Resources */,
