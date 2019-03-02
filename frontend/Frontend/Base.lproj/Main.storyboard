@@ -83,24 +83,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yAf-bW-dvm">
-                                <rect key="frame" x="16" y="64" width="343" height="422"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yAf-bW-dvm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMV-gx-Sa6">
-                                <rect key="frame" x="51" y="552" width="113" height="95"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMV-gx-Sa6">
+                                <rect key="frame" x="56" y="552" width="78" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.8898086878" green="0.8898086878" blue="0.8898086878" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Stylize"/>
+                                <state key="normal" image="Stylize"/>
                                 <connections>
                                     <action selector="onStylizeTap:" destination="DyM-f1-ZEs" eventType="touchUpInside" id="1G6-K4-Hxd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiS-yG-VxJ">
-                                <rect key="frame" x="215" y="552" width="113" height="95"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yiS-yG-VxJ">
+                                <rect key="frame" x="230" y="544" width="88" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.8898086878" green="0.8898086878" blue="0.8898086878" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" image="Save"/>
                                 <connections>
                                     <action selector="onSaveTap:" destination="DyM-f1-ZEs" eventType="touchUpInside" id="dRz-qP-A3B"/>
                                 </connections>
@@ -138,6 +136,8 @@
     </scenes>
     <resources>
         <image name="Load From Galery" width="103.26050567626953" height="103.26050567626953"/>
+        <image name="Save" width="512" height="512"/>
+        <image name="Stylize" width="256" height="256"/>
         <image name="Switch Camera" width="200" height="200"/>
     </resources>
 </document>
