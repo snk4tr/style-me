@@ -70,7 +70,8 @@ class NewPhotoViewController: UIViewController, AVCapturePhotoCaptureDelegate, U
         // Get our Live Preview going so we can actually display what the camera sees on the screen in our UIView, previewView.
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         
-        videoPreviewLayer.videoGravity = .resizeAspect
+        // Fills full screen. Use .resizeAspect to preserve ratio instead.
+        videoPreviewLayer.videoGravity = .resizeAspectFill
         videoPreviewLayer.connection?.videoOrientation = .portrait
         previewView.layer.addSublayer(videoPreviewLayer)
         

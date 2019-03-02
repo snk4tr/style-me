@@ -18,56 +18,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hN-hd-Hqg">
-                                <rect key="frame" x="144" y="494" width="102" height="71"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BDm-YW-fKa" userLabel="previewView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.8898086878" green="0.8898086878" blue="0.8898086878" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Take Photo"/>
+                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hN-hd-Hqg" customClass="RoundButton" customModule="Frontend" customModuleProvider="target">
+                                <rect key="frame" x="178" y="538" width="71" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didTakePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="548-uQ-mgq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mQ-uG-yh7">
-                                <rect key="frame" x="254" y="527" width="105" height="92"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.8898086878" green="0.8898086878" blue="0.8898086878" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Switch Camera"/>
-                                <connections>
-                                    <action selector="didSwitchCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="612-3d-aFK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNB-AY-3DQ">
                                 <rect key="frame" x="16" y="512" width="112" height="123"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="didCaptureButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ycs-bV-6By"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BDm-YW-fKa" userLabel="previewView">
-                                <rect key="frame" x="16" y="64" width="343" height="422"/>
-                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="BDm-YW-fKa" secondAttribute="height" multiplier="343:422" id="lSt-yN-1gT"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxS-rb-sTo">
-                                <rect key="frame" x="144" y="585" width="102" height="62"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxS-rb-sTo">
+                                <rect key="frame" x="304" y="581" width="55" height="54"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.8898086878" green="0.8898086878" blue="0.8898086878" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal" title="Load"/>
+                                <state key="normal" image="Load From Galery"/>
                                 <connections>
                                     <action selector="didLoadTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hkg-fJ-Mso"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3mQ-uG-yh7">
+                                <rect key="frame" x="309" y="512" width="44" height="47"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Switch Camera"/>
+                                <connections>
+                                    <action selector="didSwitchCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="612-3d-aFK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="BDm-YW-fKa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="5yY-UE-0ls"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BDm-YW-fKa" secondAttribute="trailing" constant="16" id="9LT-kF-AlZ"/>
-                            <constraint firstItem="BDm-YW-fKa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Axk-57-IOV"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="LpB-TH-T96"/>
@@ -142,4 +136,8 @@
             <point key="canvasLocation" x="4836" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Load From Galery" width="103.26050567626953" height="103.26050567626953"/>
+        <image name="Switch Camera" width="200" height="200"/>
+    </resources>
 </document>
