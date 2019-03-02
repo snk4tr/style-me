@@ -2,28 +2,24 @@ PODS:
   - Alamofire (4.8.0)
   - AlamofireImage (3.5.0):
     - Alamofire (~> 4.8)
-  - LiquidLoader (0.1.1)
   - SwiftLint (0.29.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.8)
   - AlamofireImage (~> 3.5)
-  - LiquidLoader (~> 0.1.1)
   - SwiftLint (~> 0.27)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
-    - LiquidLoader
     - SwiftLint
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
-  LiquidLoader: cf49954a6643f610c06a7db45da2da81a68a154b
   SwiftLint: 47df60bdea6e7e902b193b6596db8683aafd86a3
 
-PODFILE CHECKSUM: 3be739425b91da38f7391f6c4a89fe60b47423a5
+PODFILE CHECKSUM: 814dbc594d137470c4dd04a28f1fd4c474eb0c84
 
 COCOAPODS: 1.5.3

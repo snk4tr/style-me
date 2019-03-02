@@ -33,15 +33,24 @@ class StyleViewController: UIViewController {
         let timeout = Double(Environment().configuration(PlistKey.TimeoutInterval)) ?? 20
         manager.session.configuration.timeoutIntervalForRequest = timeout
         
+        let animator = activityStartAnimating(target: self)
+        
         // Upload init image, dowload stylized from backend
         manager.upload(imgData, to: requestPath)
             .responseImage { response in
                 guard let image = response.result.value else {
+                    
+                    // On fail stop animating
+                    activityStopAnimating(activityIndicator: animator)
+                    
                     // Handle error
                     self.showAlertWith(title: "Something went wrong", message: "Please check your connection settings and backend avaliability")
                     debugPrint("ERROR")
                     return
                 }
+                // On response stop animating
+                activityStopAnimating(activityIndicator: animator)
+                
                 // Set image as new UIImageView
                 DispatchQueue.main.async {
                     self.stylizedImage.image = image
