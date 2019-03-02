@@ -2,18 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>server_url</key>
-	<string>$(server_url)</string>
-	<key>server_port</key>
-	<string>$(server_port)</string>
-	<key>protocol</key>
-	<string>$(protocol)</string>
-	<key>timeout_interval</key>
-	<string>$(timeout_interval)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>New Prisma</string>
+	<string>Style Me</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -30,6 +22,12 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Gimme the access man! I'm not kidding!</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Please allow access to save photo in your photo</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>You can select photos to style it</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -44,12 +42,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>Gimme the access man! I&apos;m not kidding!</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>You can select photos to style it</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Please allow access to save photo in your photo</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -57,5 +49,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>protocol</key>
+	<string>$(protocol)</string>
+	<key>server_port</key>
+	<string>$(server_port)</string>
+	<key>server_url</key>
+	<string>$(server_url)</string>
+	<key>timeout_interval</key>
+	<string>$(timeout_interval)</string>
 </dict>
 </plist>
