@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		871AC44339C8A973AA7DB1FB /* Pods_Frontend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63C280229047185B9111ACD0 /* Pods_Frontend.framework */; };
 		9B871C30222AE61700ABAC82 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B871C2F222AE61700ABAC82 /* RoundButton.swift */; };
+		9B871C32222AF3E200ABAC82 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B871C31222AF3E200ABAC82 /* Animations.swift */; };
 		9B9C1EA722232A2100608B80 /* IsHumanDenseNet121.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B9C1EA622232A2100608B80 /* IsHumanDenseNet121.mlmodel */; };
 		9B9CA4A02207308E00249FD7 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9CA49F2207308E00249FD7 /* UIImage.swift */; };
 		9BA7432E2215F5970000C694 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA7432D2215F5970000C694 /* Environment.swift */; };
@@ -27,6 +28,7 @@
 		3579F1073DDFDC777A00CBE9 /* Pods-Frontend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frontend.release.xcconfig"; path = "Pods/Target Support Files/Pods-Frontend/Pods-Frontend.release.xcconfig"; sourceTree = "<group>"; };
 		63C280229047185B9111ACD0 /* Pods_Frontend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frontend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B871C2F222AE61700ABAC82 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RoundButton.swift; path = Frontend/Views/RoundButton.swift; sourceTree = SOURCE_ROOT; };
+		9B871C31222AF3E200ABAC82 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
 		9B9C1EA622232A2100608B80 /* IsHumanDenseNet121.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = IsHumanDenseNet121.mlmodel; sourceTree = "<group>"; };
 		9B9CA49F2207308E00249FD7 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		9BA7432C2215F2180000C694 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				9BEBA01021DA1FEB00ED476D /* Common.swift */,
 				9BA7432D2215F5970000C694 /* Environment.swift */,
+				9B871C31222AF3E200ABAC82 /* Animations.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Frontend/Pods-Frontend-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/LiquidLoader/LiquidLoader.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -242,6 +246,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LiquidLoader.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -282,6 +287,7 @@
 				9BA7432E2215F5970000C694 /* Environment.swift in Sources */,
 				9B9CA4A02207308E00249FD7 /* UIImage.swift in Sources */,
 				9BC66FBA21D9EE3E008E7884 /* NewPhotoViewController.swift in Sources */,
+				9B871C32222AF3E200ABAC82 /* Animations.swift in Sources */,
 				9BEBA01121DA1FEB00ED476D /* Common.swift in Sources */,
 				9B9C1EA722232A2100608B80 /* IsHumanDenseNet121.mlmodel in Sources */,
 				9BC66FB821D9EE3E008E7884 /* AppDelegate.swift in Sources */,

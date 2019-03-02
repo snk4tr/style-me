@@ -88,6 +88,7 @@ class NewPhotoViewController: UIViewController, AVCapturePhotoCaptureDelegate, U
     
     @IBAction func didTakePhoto(_ sender: UIButton) {
         let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
+        mimicScreenShotFlash(target: self)
         stillImageOutput.capturePhoto(with: settings, delegate: self)
     }
     
