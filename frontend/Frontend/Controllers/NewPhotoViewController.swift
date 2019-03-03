@@ -20,9 +20,15 @@ class NewPhotoViewController: UIViewController, AVCapturePhotoCaptureDelegate, U
     
     @IBOutlet weak var previewView: UIView!
     @IBOutlet weak var captureButton: UIButton!
+    @IBOutlet weak var switchCamera: UIButton!
+    @IBOutlet weak var loadFromGalery: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Redraw buttons with another color
+        switchCamera.redrawWithColor(color: .white)
+        loadFromGalery.redrawWithColor(color: .white)
     }
     
     override func viewDidAppear(_ animated: Bool) {

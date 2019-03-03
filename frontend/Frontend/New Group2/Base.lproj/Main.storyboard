@@ -67,7 +67,9 @@
                     <navigationItem key="navigationItem" id="LpB-TH-T96"/>
                     <connections>
                         <outlet property="captureButton" destination="NNB-AY-3DQ" id="uqq-YR-Knd"/>
+                        <outlet property="loadFromGalery" destination="xxS-rb-sTo" id="Hb9-AL-RdG"/>
                         <outlet property="previewView" destination="BDm-YW-fKa" id="etc-Xz-cfj"/>
+                        <outlet property="switchCamera" destination="3mQ-uG-yh7" id="N8U-JN-gAj"/>
                         <segue destination="DyM-f1-ZEs" kind="show" identifier="stylePhoto" id="zkg-8s-bln"/>
                     </connections>
                 </viewController>
