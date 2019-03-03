@@ -12,13 +12,20 @@ import AlamofireImage
 
 class StyleViewController: UIViewController {
 
-    
+    var sequeTransferProtocol: SegueTransferProtocol!
     @IBOutlet weak var stylizedImage: UIImageView!
     var capturedImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         stylizedImage.image = capturedImage
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destVC = segue.destination as! NewPhotoViewController
+        destVC.captureButton.setImage(stylizedImage.image, for: .normal)
+        destVC.capturedImage = stylizedImage.image
+        print("TRIGGERED")
     }
     
     @IBAction func onStylizeTap(_ sender: UIButton) {
@@ -54,6 +61,9 @@ class StyleViewController: UIViewController {
                 // Set image as new UIImageView
                 DispatchQueue.main.async {
                     self.stylizedImage.image = image
+                    
+                    // Also don't forget to send it back to the NewPhoto VC to update image of the preview button.
+                    self.sequeTransferProtocol.setStylizedImage(stylizedImage: image)
                 }
                 debugPrint("DONE")
         }

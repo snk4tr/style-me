@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import AVFoundation
 
-class NewPhotoViewController: UIViewController, AVCapturePhotoCaptureDelegate, UINavigationControllerDelegate {
+class NewPhotoViewController: UIViewController, AVCapturePhotoCaptureDelegate, UINavigationControllerDelegate, SegueTransferProtocol {
     
     var captureSession: AVCaptureSession!
     var stillImageOutput: AVCapturePhotoOutput!
@@ -157,6 +157,9 @@ class NewPhotoViewController: UIViewController, AVCapturePhotoCaptureDelegate, U
         if segue.identifier == "stylePhoto" {
             if let svc = segue.destination as? StyleViewController {
                 svc.capturedImage = capturedImage
+                
+                // Also set this VC to be a delegate of the Style VC in order to allow back transfer of the stylized image.
+                svc.sequeTransferProtocol = self
             }
         }
     }
@@ -192,6 +195,11 @@ extension NewPhotoViewController: UIImagePickerControllerDelegate{
         // Both have to be updated: proxy image storage and buttons image view
         capturedImage = selectedImage
         captureButton.setImage(selectedImage, for: .normal)
+    }
+    
+    func setStylizedImage(stylizedImage: UIImage) {
+        capturedImage = stylizedImage
+        captureButton.setImage(stylizedImage, for: .normal)
     }
 }
 
