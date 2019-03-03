@@ -1,12 +1,21 @@
 import numpy as np
 import cv2
 
+from functools import reduce
+
 from backend.util.validators import image_is_valid
 from backend.util.common import resize_to_standard
 
 
-async def prepare_image_from_request(image_bytes: bytes):
-    image = decode_bytes_to_image(image_bytes)
+async def prepare_image_from_request(image_bytes: bytes, config: dict):
+    transformations_to_apply = [
+        decode_bytes_to_image,
+        lambda img: cv2.cvtColor(img, cv2.COLOR_BGR2RGB),
+        lambda img: resize_to_standard(img, config)
+    ]
+
+    image = reduce(lambda im, func: func(im), transformations_to_apply, image_bytes)
+
     if image.size == 0:
         raise ValueError('Image buffer is too short or contains invalid data')
 
@@ -35,4 +44,3 @@ def encode_image_to_bytes(image: np.ndarray) -> bytes:
 
     image_bytes = encoded_image.tobytes()
     return image_bytes
-

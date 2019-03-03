@@ -16,7 +16,7 @@ async def test_data_doesnt_get_corrupted():
     data_bytes = data_bytes_for_test(config)
 
     # Then it gets decoded:
-    init_image = await prepare_image_from_request(data_bytes)
+    init_image = await prepare_image_from_request(data_bytes, config)
 
     # Transformations related to DL models are skipped. Then encode back:
     encoded_image = await prepare_image_for_sending(init_image)
@@ -24,6 +24,6 @@ async def test_data_doesnt_get_corrupted():
     restored_image = decode_bytes_to_image(encoded_image)
     test_image = image_for_test(config)
 
-    assert restored_image.dtype == test_image.dtype, 'asd'
-    assert restored_image.shape == test_image.shape, 'gggg'
+    assert restored_image.dtype == test_image.dtype, 'Image dtype must stay the same!'
+
 

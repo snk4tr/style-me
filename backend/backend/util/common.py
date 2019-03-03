@@ -91,7 +91,8 @@ def get_variable_size(obj, seen=None):
 def resize_to_standard(image: np.ndarray, config: dict):
     standard_side = config['style']['img_side']
     if any([side != standard_side for side in image.shape[:2]]):
-        return cv2.resize(image, (standard_side, standard_side))
+        init_aspect_ratio = image.shape[0] / image.shape[1]
+        return cv2.resize(image, (standard_side, int(standard_side * init_aspect_ratio)))
 
     return image
 

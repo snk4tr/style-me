@@ -8,7 +8,7 @@ from backend.util.common import center_crop
 
 async def style(request: aiohttp.web.web_request.Request):
     data = await request.read()
-    init_image = await prepare_image_from_request(data)
+    init_image = await prepare_image_from_request(data, request.app['config'])
 
     model = request.app['models']['style']
     stylized_image = model.stylize_image(init_image)

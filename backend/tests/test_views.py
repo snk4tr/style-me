@@ -53,6 +53,4 @@ class StyleViewTest(AioHTTPTestCase):
         assert init_image.dtype == stylized_image.dtype, f'Dtypes of init and stylized images have to be the same, ' \
             f'got: init - [{init_image.dtype}], stylized - [{stylized_image.dtype}]'
 
-        assert init_image.shape == stylized_image.shape, f'Init and stylized ' \
-            f'images have to be the same shape, got: init - [{init_image.shape}], stylized - [{stylized_image.shape}]'
 
