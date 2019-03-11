@@ -1,19 +1,19 @@
 # Style Me!
 
-The project aims to implement an iOS application for Neural Style Transfer on photos of people.
+The project aims to implement an iOS application for **Neural Style Transfer** on photos of people.
 
 ### Functionality
-* User can either take a photo with front/back camera or upload one the photo gallery.
-* One can generate stylized version of the uploaded photo.
+* User can either take a photo with the front/back camera or upload one from the photo gallery.
+* One can generate a stylized version of the uploaded photo.
 * Generated photo can be saved on the device.
 
 ### How does it work?
-* Binary classification model (human/not human) implemented and trained with `Keras`, and converted into `CoreML` format, which allows performing classification of client-side. 
+* **Binary classification** model (human/not human) implemented and trained with `Keras`, and converted into `CoreML` format, which allows performing classification of client-side. 
 
 <img src="assets/human_not_human.gif" alt="stylization" border="0" width="200">
 
 
-* The `PyTorch` model performs Neural Style Transfer as a part of the web-service, implemented with `aiohttp`.
+* The `PyTorch` model performs **Neural Style Transfer** as a part of the web-service, implemented with `aiohttp`.
 
 <img src="assets/stylization.gif" alt="human-not-human" border="0" width="200">
 
